@@ -8,6 +8,7 @@
 
 /* screens */
 @import url(./screens/main.css);
+@import url(./screens/qna.css);
 
 main {
   height: 100vh;
@@ -16,6 +17,10 @@ main {
   justify-content: center;
   align-items: center;
   background: radial-gradient(var(--sub-bg-color), var(--main-bg-color));
+}
+
+main > .hide {
+  display: none !important;
 }
 
 main > h1 {

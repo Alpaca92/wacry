@@ -1,0 +1,63 @@
+#qna {
+  padding: 1.5rem 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-container {
+  width: 90%;
+  height: 5px;
+  background-color: #f5f5f5;
+}
+
+.status-container > .status-bar {
+  width: 0%;
+  height: 5px;
+  background-color: var(--main-bg-color);
+  transition: width 0.5s ease-in-out;
+}
+
+.question-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.question-container > .question-prefix {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3rem;
+}
+
+.question-container > .question {
+  margin-left: 0.5rem;
+  line-height: 2.6rem;
+}
+
+.answer-container {
+  width: 100%;
+  height: 15rem;
+  display: grid;
+  justify-items: center;
+  grid-template-rows: repeat(auto-fill, minmax(3rem, auto));
+  row-gap: 0.5rem;
+}
+
+.answer-container > .answer {
+  color: #fff;
+  width: 90%;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-bg-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.answer-container > .answer:hover {
+  background-color: var(--sub-bg-color);
+}

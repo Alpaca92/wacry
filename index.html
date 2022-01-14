@@ -15,7 +15,7 @@
 <body>
   <main>
     <h1>만약 내가 아케인 캐릭터라면 ?</h1>
-    <article id='main'>
+    <article id='main' class="hide">
       <p class="start">시작하기</p>
     </article>
     <article id="qna" class="hide">
@@ -24,14 +24,18 @@
       </div>
       <div class="question-container">
         <span class="question-prefix">Q. </span>
-        <p class="question">질문질문질문</p>
+        <p class="question"></p>
       </div>
-      <ul class="answer-container">
-        <li class="answer">답변 1</li>
-        <li class="answer">답변 2</li>
-        <li class="answer">답변 3</li>
-        <li class="answer">답변 4</li>
+      <ul class="answers-container">
       </ul>
+    </article>
+    <article id="result">
+      <div class='result__profile'>
+        <div class="result__img"></div>
+        <h2 class="result__name"></h2>
+      </div>
+      <p class="result__description"></p>
+      <div class="result__share-kakao">카카오톡으로 공유하기</div>
     </article>
   </main>
 </body>

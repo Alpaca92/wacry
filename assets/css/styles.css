@@ -1,0 +1,33 @@
+/* reset css */
+@import url(./reset.css);
+
+/* variables */
+@import url(./_variables.css);
+
+/* components */
+
+/* screens */
+@import url(./screens/main.css);
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(var(--sub-bg-color), var(--main-bg-color));
+}
+
+main > h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding: 1rem 0;
+  color: #fff;
+}
+
+article {
+  width: 360px;
+  height: 640px;
+  border: 1px solid #8aa2cf;
+  border-radius: 20px;
+}

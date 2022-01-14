@@ -1,0 +1,22 @@
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: center / cover no-repeat url(../../img/arcane-poster.jpg);
+}
+
+#main > .start {
+  width: 80%;
+  text-align: center;
+  line-height: 3rem;
+  margin-bottom: 7rem;
+  border-radius: 20px;
+  color: #fff;
+  background-color: var(--main-bg-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#main > .start:hover {
+  background-color: var(--sub-bg-color);
+}

@@ -19,3 +19,10 @@
 #main > .start:hover {
   background-color: var(--sub-bg-color);
 }
+
+@media screen and (max-width: 380px) {
+  #main > .start {
+    line-height: 2rem;
+    margin-bottom: 3.5rem;
+  }
+}

@@ -4,8 +4,6 @@
 /* variables */
 @import url(./_variables.css);
 
-/* components */
-
 /* screens */
 @import url(./screens/main.css);
 @import url(./screens/qna.css);
@@ -37,4 +35,17 @@ article {
   height: 640px;
   border: 1px solid #8aa2cf;
   border-radius: 20px;
+}
+
+@media screen and (max-width: 380px) {
+  main > h1 {
+    font-size: 1.2rem;
+  }
+
+  article {
+    font-family: sans-serif;
+    width: 80vw;
+    height: calc(80vw * 1.78);
+    font-size: 0.8rem;
+  }
 }

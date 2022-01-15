@@ -60,3 +60,29 @@
 .answers-container > .answer:hover {
   background-color: var(--sub-bg-color);
 }
+
+@media screen and (max-width: 380px) {
+  .status-container {
+    height: 3px;
+  }
+
+  .status-container > .status-bar {
+    height: 3px;
+  }
+
+  .question-container > .question-prefix {
+    font-size: 1rem;
+    line-height: normal;
+  }
+
+  .question-container > .question {
+    margin-left: 0.5rem;
+    line-height: normal;
+  }
+
+  .answers-container {
+    height: 9rem;
+    grid-template-rows: repeat(auto-fill, minmax(2rem, auto));
+    row-gap: 0.3rem;
+  }
+}

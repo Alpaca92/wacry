@@ -19,42 +19,42 @@ const QNA = [
 ];
 
 const RESULTS = {
-  1: {
+  caitlyn: {
     img: "assets/img/arcane-caitlyn.png",
     name: "caitlyn",
     description: "",
   },
-  2: {
+  ekko: {
     img: "assets/img/arcane-ekko.png",
     name: "ekko",
     description: "",
   },
-  3: {
+  jayce: {
     img: "assets/img/arcane-jayce.png",
     name: "jayce",
     description: "",
   },
-  4: {
+  mel: {
     img: "assets/img/arcane-mel.png",
     name: "mel",
     description: "",
   },
-  5: {
+  powder: {
     img: "assets/img/arcane-powder.png",
     name: "powder",
     description: "",
   },
-  6: {
+  silco: {
     img: "assets/img/arcane-silco.png",
     name: "silco",
     description: "",
   },
-  7: {
+  vander: {
     img: "assets/img/arcane-vander.png",
     name: "vander",
     description: "",
   },
-  8: {
+  viktor: {
     img: "assets/img/arcane-viktor.png",
     name: "viktor",
     description: "",

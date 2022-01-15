@@ -27,14 +27,25 @@ const removeChildren = (parentNode) => {
 };
 
 const printResult = (value) => {
+  let character = "";
+
   const result = document.querySelector("#result");
   const img = result.querySelector(".result__img");
   const name = result.querySelector(".result__name");
   const description = result.querySelector(".result__description");
 
-  img.style.backgroundImage = `url(${RESULTS[value].img})`;
-  name.innerText = RESULTS[value].name;
-  description.innerText = RESULTS[value].description;
+  switch (true) {
+    case value < 5:
+      character = "ekko";
+      break;
+    default:
+      character = "powder";
+      break;
+  }
+
+  img.style.backgroundImage = `url(${RESULTS[character].img})`;
+  name.innerText = RESULTS[character].name;
+  description.innerText = RESULTS[character].description;
 };
 
 const printQna = (questionNumber) => {
@@ -72,12 +83,6 @@ const printQna = (questionNumber) => {
 };
 
 const init = () => {
-  /*
-  get query string
-  const urlSearchParams = new URLSearchParams(window.location.search);
-  const params = Object.fromEntries(urlSearchParams.entries());
-  */
-
   const start = document.querySelector(".start");
 
   start.addEventListener("click", () => {

@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
   <script src="./assets/js/data.js" defer></script>
   <script src="./assets/js/main.js" defer></script>
   <title>만약 내가 아케인 캐릭터라면 ?</title>
@@ -15,7 +16,7 @@
 <body>
   <main>
     <h1>만약 내가 아케인 캐릭터라면 ?</h1>
-    <article id='main' class="hide">
+    <article id='main'>
       <p class="start">시작하기</p>
     </article>
     <article id="qna" class="hide">
@@ -29,13 +30,13 @@
       <ul class="answers-container">
       </ul>
     </article>
-    <article id="result">
+    <article id="result" class="hide">
       <div class='result__profile'>
         <div class="result__img"></div>
         <h2 class="result__name"></h2>
       </div>
       <p class="result__description"></p>
-      <div class="result__share-kakao">카카오톡으로 공유하기</div>
+      <div id="kakao-link-btn" class="result__share-kakao" onclick="">친구는 어떤 캐릭터일까 ?</div>
     </article>
   </main>
 </body>

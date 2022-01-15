@@ -1,5 +1,15 @@
+Kakao.init("ab18867ed96936a5a2ddc9071318381d");
+Kakao.isInitialized();
+
 let score = 0;
-let share = ``;
+
+const shareKakao = () => {
+  Kakao.Link.createScrapButton({
+    container: "#kakao-link-btn",
+    requestUrl: "http://localhost:5500",
+    templateId: 68876,
+  });
+};
 
 const isHide = (id) => {
   const target = document.querySelector(`#${id}`);
@@ -21,7 +31,6 @@ const printResult = (value) => {
   const img = result.querySelector(".result__img");
   const name = result.querySelector(".result__name");
   const description = result.querySelector(".result__description");
-  const shareKakaoBtn = result.querySelector(".result__share-kakao");
 
   img.style.backgroundImage = `url(${RESULTS[value].img})`;
   name.innerText = RESULTS[value].name;
@@ -32,6 +41,7 @@ const printQna = (questionNumber) => {
   if (questionNumber > QNA.length) {
     isHide("qna");
     isHide("result");
+    shareKakao();
     printResult(score);
 
     return;

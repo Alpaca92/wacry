@@ -21,22 +21,47 @@ const QNA = [
 const RESULTS = {
   1: {
     img: "assets/img/arcane-caitlyn.png",
-    name: "Caitlyn",
-    description: "설명1",
+    name: "caitlyn",
+    description: "",
   },
   2: {
-    img: "qopkdqop",
-    name: "이름2",
-    description: "설명2",
+    img: "assets/img/arcane-ekko.png",
+    name: "ekko",
+    description: "",
   },
   3: {
-    img: "qopkdqop",
-    name: "이름3",
-    description: "설명3",
+    img: "assets/img/arcane-jayce.png",
+    name: "jayce",
+    description: "",
   },
   4: {
-    img: "qopkdqop",
-    name: "이름4",
-    description: "설명4",
+    img: "assets/img/arcane-mel.png",
+    name: "mel",
+    description: "",
+  },
+  5: {
+    img: "assets/img/arcane-powder.png",
+    name: "powder",
+    description: "",
+  },
+  6: {
+    img: "assets/img/arcane-silco.png",
+    name: "silco",
+    description: "",
+  },
+  7: {
+    img: "assets/img/arcane-vander.png",
+    name: "vander",
+    description: "",
+  },
+  8: {
+    img: "assets/img/arcane-viktor.png",
+    name: "viktor",
+    description: "",
+  },
+  9: {
+    img: "assets/img/arcane-violet.png",
+    name: "violet",
+    description: "",
   },
 };

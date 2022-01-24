@@ -11,85 +11,99 @@ const shareKakao = () => {
   });
 };
 
-const isHide = (id) => {
-  const target = document.querySelector(`#${id}`);
-  const classList = target.classList.value.split(" ");
+const changeArticle = (disappearArticleId, appearArticleId) => {
+  const disappearArticle = document.querySelector(`#${disappearArticleId}`);
+  const disappearArticleClassList = disappearArticle.classList.value.split(" ");
+  const appearArticle = document.querySelector(`#${appearArticleId}`);
+  const appearArticleClassList = appearArticle.classList.value.split(" ");
 
-  classList.includes("hide")
-    ? target.classList.remove("hide")
-    : target.classList.add("hide");
-};
-
-const removeChildren = (parentNode) => {
-  while (parentNode.childElementCount) {
-    parentNode.removeChild(parentNode.querySelector("li"));
+  if (
+    !disappearArticleClassList.includes("hide") &&
+    appearArticleClassList.includes("hide")
+  ) {
+    disappearArticle.classList.add("hide");
+    appearArticleClassList.classList.remove("hide");
   }
 };
 
-const printResult = (value) => {
-  let character = "";
-
-  const result = document.querySelector("#result");
-  const img = result.querySelector(".result__img");
-  const name = result.querySelector(".result__name");
-  const description = result.querySelector(".result__description");
-
-  switch (true) {
-    case value < 5:
-      character = "ekko";
-      break;
-    default:
-      character = "powder";
-      break;
-  }
-
-  img.style.backgroundImage = `url(${RESULTS[character].img})`;
-  name.innerText = RESULTS[character].name;
-  description.innerText = RESULTS[character].description;
+const startTest = () => {
+  changeArticle("main", "qna");
 };
 
-const printQna = (questionNumber) => {
-  if (questionNumber > QNA.length) {
-    isHide("qna");
-    isHide("result");
-    shareKakao();
-    printResult(score);
+const printQna = () => {
+  
+}
 
-    return;
-  }
+// const removeChildren = (parentNode) => {
+//   while (parentNode.childElementCount) {
+//     parentNode.removeChild(parentNode.querySelector("li"));
+//   }
+// };
 
-  const qna = document.querySelector("#qna");
-  const statusBar = qna.querySelector(".status-bar");
-  const question = qna.querySelector(".question");
-  const answersContainer = qna.querySelector(".answers-container");
+// const printResult = (value) => {
+//   let character = "";
 
-  removeChildren(answersContainer);
+//   const result = document.querySelector("#result");
+//   const img = result.querySelector(".result__img");
+//   const name = result.querySelector(".result__name");
+//   const description = result.querySelector(".result__description");
 
-  statusBar.style.width = `${(100 * questionNumber) / QNA.length}%`;
-  question.innerText = QNA[questionNumber - 1].q;
+//   switch (true) {
+//     case value < 5:
+//       character = "ekko";
+//       break;
+//     default:
+//       character = "powder";
+//       break;
+//   }
 
-  QNA[questionNumber - 1].a.map((answer, i) => {
-    const li = document.createElement("li");
-    li.classList.add("answer");
-    li.innerText = answer.text;
+//   img.style.backgroundImage = `url(${RESULTS[character].img})`;
+//   name.innerText = RESULTS[character].name;
+//   description.innerText = RESULTS[character].description;
+// };
 
-    li.addEventListener("click", () => {
-      score += QNA[questionNumber - 1].a[i].score;
-      printQna(++questionNumber);
-    });
+// const printQna = (questionNumber) => {
+//   if (questionNumber > QNA.length) {
+//     changeArticle("qna");
+//     changeArticle("result");
+//     shareKakao();
+//     printResult(score);
 
-    answersContainer.appendChild(li);
-  });
-};
+//     return;
+//   }
 
-const init = () => {
-  const start = document.querySelector(".start");
+//   const qna = document.querySelector("#qna");
+//   const statusBar = qna.querySelector(".status-bar");
+//   const question = qna.querySelector(".question");
+//   const answersContainer = qna.querySelector(".answers-container");
 
-  start.addEventListener("click", () => {
-    isHide("main");
-    isHide("qna");
-    printQna(1);
-  });
-};
+//   removeChildren(answersContainer);
 
-init();
+//   statusBar.style.width = `${(100 * questionNumber) / QNA.length}%`;
+//   question.innerText = QNA[questionNumber - 1].q;
+
+//   QNA[questionNumber - 1].a.map((answer, i) => {
+//     const li = document.createElement("li");
+//     li.classList.add("answer");
+//     li.innerText = answer.text;
+
+//     li.addEventListener("click", () => {
+//       score += QNA[questionNumber - 1].a[i].score;
+//       printQna(++questionNumber);
+//     });
+
+//     answersContainer.appendChild(li);
+//   });
+// };
+
+// const init = () => {
+//   const start = document.querySelector(".start");
+
+//   start.addEventListener("click", () => {
+//     changeArticle("main");
+//     changeArticle("qna");
+//     printQna(1);
+//   });
+// };
+
+// init();

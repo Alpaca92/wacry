@@ -1,15 +1,12 @@
 Kakao.init("ab18867ed96936a5a2ddc9071318381d");
 Kakao.isInitialized();
+Kakao.Link.createScrapButton({
+  container: "#kakao-link-btn",
+  requestUrl: "http://localhost:5500",
+  templateId: 68876,
+});
 
 let score = 0;
-
-const shareKakao = () => {
-  Kakao.Link.createScrapButton({
-    container: "#kakao-link-btn",
-    requestUrl: "http://localhost:5500",
-    templateId: 68876,
-  });
-};
 
 const changeArticle = (disappearArticleId, appearArticleId) => {
   const disappearArticle = document.querySelector(`#${disappearArticleId}`);
@@ -22,88 +19,82 @@ const changeArticle = (disappearArticleId, appearArticleId) => {
     appearArticleClassList.includes("hide")
   ) {
     disappearArticle.classList.add("hide");
-    appearArticleClassList.classList.remove("hide");
+    appearArticle.classList.remove("hide");
   }
 };
 
 const startTest = () => {
+  printQna(1);
   changeArticle("main", "qna");
 };
 
-const printQna = () => {
-  
-}
+const printResult = (score) => {
+  const resultImage = document.querySelector("#result .result__img");
+  const resultName = document.querySelector("#result .result__name");
+  const resultDescription = document.querySelector(
+    "#result .result__description"
+  );
 
-// const removeChildren = (parentNode) => {
-//   while (parentNode.childElementCount) {
-//     parentNode.removeChild(parentNode.querySelector("li"));
-//   }
-// };
+  let character = {};
 
-// const printResult = (value) => {
-//   let character = "";
+  switch (true) {
+    case score < 5:
+      character = RESULTS.caitlyn;
+      break;
+    default:
+      character = RESULTS.silco;
+      break;
+  }
 
-//   const result = document.querySelector("#result");
-//   const img = result.querySelector(".result__img");
-//   const name = result.querySelector(".result__name");
-//   const description = result.querySelector(".result__description");
+  const { img, name, description } = character;
 
-//   switch (true) {
-//     case value < 5:
-//       character = "ekko";
-//       break;
-//     default:
-//       character = "powder";
-//       break;
-//   }
+  resultImage.style.backgroundImage = `url(${img})`;
+  resultName.innerText = name;
+  resultDescription.innerText = description;
+};
 
-//   img.style.backgroundImage = `url(${RESULTS[character].img})`;
-//   name.innerText = RESULTS[character].name;
-//   description.innerText = RESULTS[character].description;
-// };
+const updateProgressBar = (questionNumber) => {
+  const progressBar = document.querySelector("#qna .progress-bar");
 
-// const printQna = (questionNumber) => {
-//   if (questionNumber > QNA.length) {
-//     changeArticle("qna");
-//     changeArticle("result");
-//     shareKakao();
-//     printResult(score);
+  progressBar.style.width = `${(100 * questionNumber) / QNA.length}%`;
+};
 
-//     return;
-//   }
+const removeChildren = (parentNode) => {
+  while (parentNode.childElementCount) {
+    parentNode.removeChild(parentNode.querySelector("button"));
+  }
+};
 
-//   const qna = document.querySelector("#qna");
-//   const statusBar = qna.querySelector(".status-bar");
-//   const question = qna.querySelector(".question");
-//   const answersContainer = qna.querySelector(".answers-container");
+const printQna = (questionNumber) => {
+  if (questionNumber > QNA.length) {
+    changeArticle("qna", "result");
+    printResult(score);
 
-//   removeChildren(answersContainer);
+    return;
+  }
 
-//   statusBar.style.width = `${(100 * questionNumber) / QNA.length}%`;
-//   question.innerText = QNA[questionNumber - 1].q;
+  const question = document.querySelector("#qna .question");
+  const answerContainer = document.querySelector("#qna .answers-container");
 
-//   QNA[questionNumber - 1].a.map((answer, i) => {
-//     const li = document.createElement("li");
-//     li.classList.add("answer");
-//     li.innerText = answer.text;
+  updateProgressBar(questionNumber);
+  removeChildren(answerContainer);
 
-//     li.addEventListener("click", () => {
-//       score += QNA[questionNumber - 1].a[i].score;
-//       printQna(++questionNumber);
-//     });
+  question.innerText = QNA[questionNumber - 1].question;
 
-//     answersContainer.appendChild(li);
-//   });
-// };
+  QNA[questionNumber - 1].answers.forEach((answer) => {
+    const button = document.createElement("button");
 
-// const init = () => {
-//   const start = document.querySelector(".start");
+    button.innerText = answer.text;
+    button.classList.add("answer");
+    button.onclick = () => {
+      score += answer.score;
+      printQna(++questionNumber);
+    };
 
-//   start.addEventListener("click", () => {
-//     changeArticle("main");
-//     changeArticle("qna");
-//     printQna(1);
-//   });
-// };
+    answerContainer.appendChild(button);
+  });
+};
 
-// init();
+const goHome = () => {
+  changeArticle("result", "main");
+};

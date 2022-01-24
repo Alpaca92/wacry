@@ -16,19 +16,19 @@
 <body>
   <main>
     <h1>만약 내가 아케인 캐릭터라면 ?</h1>
-    <article id='main' class="hide">
+    <article id='main'>
       <button class="start" onclick="startTest()">시작하기</button>
     </article>
-    <article id="qna">
-      <div class="status-container">
-        <div class="status-bar"></div>
+    <article id="qna" class="hide">
+      <div class="progress-container">
+        <div class="progress-bar"></div>
       </div>
       <div class="question-container">
         <span class="question-prefix">Q. </span>
         <p class="question"></p>
       </div>
-      <ul class="answers-container">
-      </ul>
+      <div class="answers-container">
+      </div>
     </article>
     <article id="result" class="hide">
       <div class='result__profile'>
@@ -36,7 +36,10 @@
         <h2 class="result__name"></h2>
       </div>
       <p class="result__description"></p>
-      <div id="kakao-link-btn" class="result__share-kakao" onclick="">친구는 어떤 캐릭터와 어울릴까 ?</div>
+      <div class="result__button-container">
+        <button class="result__go-home" onclick="goHome()">&larr; 처음으로 돌아가기</button>
+        <button id="kakao-link-btn" class="result__share-kakao">친구는 어떤 캐릭터와 어울릴까 ?</button>
+      </div>
     </article>
   </main>
 </body>

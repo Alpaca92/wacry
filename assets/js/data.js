@@ -1,7 +1,7 @@
 const QNA = [
   {
-    q: "질문입니다 1",
-    a: [
+    question: "질문입니다 1",
+    answers: [
       {
         text: "답변입니다 1",
         score: 1,
@@ -16,13 +16,52 @@ const QNA = [
       },
     ],
   },
+  {
+    question: "질문입니다 222221",
+    answers: [
+      {
+        text: "답변입니다 1231",
+        score: 1,
+      },
+      {
+        text: "답변입니다 1232",
+        score: 3,
+      },
+      {
+        text: "답변입니다 3124",
+        score: 1,
+      },
+      {
+        text: "답변입니다 3124",
+        score: 1,
+      },
+    ],
+  },
+  {
+    question: "질문입니다 333331",
+    answers: [
+      {
+        text: "답변입니다 45121",
+        score: 1,
+      },
+      {
+        text: "답변입니다 2123",
+        score: 3,
+      },
+      {
+        text: "답변입니다 12533",
+        score: 1,
+      },
+    ],
+  },
 ];
 
 const RESULTS = {
   caitlyn: {
     img: "assets/img/arcane-caitlyn.png",
     name: "caitlyn",
-    description: "",
+    description:
+      "케이틀린입니다 케이틀린입니다 케이틀린입니다 케이틀린입니다 케이틀린입니다 케이틀린입니다 케이틀린입니다 케이틀린입니다 케이틀린입니다 케이틀린입니다 케이틀린입니다 케이틀린입니다",
   },
   ekko: {
     img: "assets/img/arcane-ekko.png",

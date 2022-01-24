@@ -21,9 +21,34 @@
 }
 
 #result > .result__description {
+  width: 90%;
+  line-height: 1.2rem;
 }
 
-#result > .result__share-kakao {
+.result__button-container {
+  width: 100%;
+  display: grid;
+  row-gap: 0.7rem;
+  justify-items: center;
+}
+
+.result__button-container > .result__go-home {
+  width: 90%;
+  line-height: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d3dedc;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.result__button-container > .result__go-home:hover {
+  background-color: #92A9BD;
+}
+
+.result__button-container > .result__share-kakao {
   width: 90%;
   line-height: 3rem;
   border-radius: 1rem;
@@ -35,7 +60,7 @@
   transition: background-color 0.2s ease-in-out;
 }
 
-#result > .result__share-kakao:hover {
+.result__button-container > .result__share-kakao:hover {
   background-color: #f9e000;
 }
 

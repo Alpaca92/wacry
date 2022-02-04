@@ -96,5 +96,6 @@ const printQna = (questionNumber) => {
 };
 
 const goHome = () => {
+  score = 0;
   changeArticle("result", "main");
 };

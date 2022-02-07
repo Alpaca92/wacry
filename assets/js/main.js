@@ -38,11 +38,20 @@ const printResult = (score) => {
   let character = {};
 
   switch (true) {
-    case score < 5:
-      character = RESULTS.caitlyn;
+    case score < 25:
+      character = RESULTS.powder;
+      break;
+    case score >= 25 && score < 40:
+      character = RESULTS.viktor;
+      break;
+    case score >= 40 && score < 48:
+      character = RESULTS.jayce;
+      break;
+    case score >= 48:
+      character = RESULTS.silco;
       break;
     default:
-      character = RESULTS.silco;
+      character = RESULTS.powder;
       break;
   }
 

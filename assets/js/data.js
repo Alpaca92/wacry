@@ -140,21 +140,25 @@ const RESULTS = {
   jayce: {
     img: "assets/img/arcane-jayce.png",
     name: "jayce",
-    description: "",
+    description:
+      "당신은 항상 자신에게 주어진 일에 충실하며 용감하고 상당히 똑똑합니다. 책임감을 가지고 항상 주변 사람들을 신경 쓰려 노력합니다.",
   },
   powder: {
     img: "assets/img/arcane-powder.png",
     name: "powder",
-    description: "",
+    description:
+      "당신은 질투심이 남들보다 강한 편입니다. 비록 실수를 할 때도 있지만 질투심을 원동력으로 항상 잘해보려고 하는 열정이 가득한 사람입니다.",
   },
   silco: {
     img: "assets/img/arcane-silco.png",
     name: "silco",
-    description: "",
+    description:
+      "당신은 겉으로는 차가워 보일 수 있지만 주변 사람들을 누구보다 사랑하는 따뜻한 사람입니다. 이성적이지만 때로는 사랑하는 것을 지키기 위해 감성적인 선택을 할 때도 있습니다.",
   },
   viktor: {
     img: "assets/img/arcane-viktor.png",
     name: "viktor",
-    description: "",
+    description:
+      "당신은 변화를 두려워하지 않는 혁신가입니다. 한 가지에 몰두하여 시간 가는 줄 모르는 뛰어난 집중력을 갖고 있습니다.",
   },
 };

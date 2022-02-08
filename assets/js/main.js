@@ -2,7 +2,7 @@ Kakao.init("ab18867ed96936a5a2ddc9071318381d");
 Kakao.isInitialized();
 Kakao.Link.createScrapButton({
   container: "#kakao-link-btn",
-  requestUrl: "http://localhost:5500",
+  requestUrl: "https://wacry.netlify.app",
   templateId: 68876,
 });
 

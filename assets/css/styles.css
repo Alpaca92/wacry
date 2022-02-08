@@ -1,13 +1,13 @@
 /* reset css */
-@import url(/assets/css/reset.css);
+@import "./reset.css";
 
 /* variables */
-@import url(/assets/css/_variables.css);
+@import "./_variables.css";
 
 /* screens */
-@import url(/assets/css/screens/main.css);
-@import url(/assets/css/screens/qna.css);
-@import url(/assets/css/screens/result.css);
+@import "./screens/main.css";
+@import "./screens/qna.css";
+@import "./screens/result.css";
 
 main {
   height: 100vh;
